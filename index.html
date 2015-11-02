@@ -19,17 +19,14 @@
     </section>
 
     <section class="main-content">
-      <h3>
-<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction.</h3>
-
-<p>Simple multi-language text clock to run in raspberry pi.</p>
+      <p>Simple multi-language text clock to run in raspberry pi.</p>
 
 <p>The display spells out every minute of every day the way people say it: "A quarter to five" or "Nine minutes to six" or just "Midnight"</p>
 
 <p>A real conversation starter!</p>
 
-<h3>
-<a id="help-wanted" class="anchor" href="#help-wanted" aria-hidden="true"><span class="octicon octicon-link"></span></a>Help Wanted!</h3>
+<h1>
+<a id="help-wanted" class="anchor" href="#help-wanted" aria-hidden="true"><span class="octicon octicon-link"></span></a>Help Wanted!</h1>
 
 <p>We’ve created some language templates for you to use. </p>
 
@@ -42,15 +39,15 @@
 
 <p>If you're interested in other language, needs to create a new csv with the strings for every minute in whole 24 hour. Please, contact me for further assistance.</p>
 
-<h3>
-<a id="adding-a-real-time-clock" class="anchor" href="#adding-a-real-time-clock" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a real time clock.</h3>
+<h1>
+<a id="adding-a-real-time-clock" class="anchor" href="#adding-a-real-time-clock" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a real time clock.</h1>
 
 <p>While your Pi is connected to a network it will be able to set its clock correctly using NTP. Without a network connection the system time and date will almost certainly be wrong. </p>
 
 <p>This can be solved using a Real Time Clock (RTC) module. This will use a small coin cell battery to keep the time for the Pi even if it is turned off. When the Pi reboots it can set it’s own internal clock using the time held in by the RTC.</p>
 
-<h2>
-<a id="ds1307-or-ds3231" class="anchor" href="#ds1307-or-ds3231" aria-hidden="true"><span class="octicon octicon-link"></span></a>DS1307 or DS3231?</h2>
+<h3>
+<a id="ds1307-or-ds3231" class="anchor" href="#ds1307-or-ds3231" aria-hidden="true"><span class="octicon octicon-link"></span></a>DS1307 or DS3231?</h3>
 
 <p>Modules based on the DS1307 and DS3231 chips are popular devices and you’ll see them for sale from various retailers. My advice would be to go for a DS3231 based module that brings temperature compensation. They are more accurate and run happily from 3.3V. </p>
 
@@ -58,8 +55,8 @@
 
 <p>This generic I2C module have pull-up resistors on the SDA and SCL pins but these aren’t required as the Pi has it’s own pull-ups. I didn’t want these on-board resistors to interfere with the operation of the I2C bus so I removed them. The location of the resistors is shown in the photo below :</p>
 
-<h2>
-<a id="i2c--ds3231-setup" class="anchor" href="#i2c--ds3231-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>I2C &amp; DS3231 setup</h2>
+<h3>
+<a id="i2c--ds3231-setup" class="anchor" href="#i2c--ds3231-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>I2C &amp; DS3231 setup</h3>
 
 <p>In order to ensure you’ve got the latest updates you should run the following commands :</p>
 
