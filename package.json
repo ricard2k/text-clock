@@ -1,0 +1,98 @@
+{
+  "name": "text-clock",
+  "version": "2.0.0",
+  "description": "textClock is a beautiful but simple text clock for raspberry pi",
+  "author": {
+    "name": "Ricardo Peironcely",
+    "email": "ricardo.peironcely@gmail.com"
+  },
+  "main": "app.js",
+  "build": {
+    "appId": "text-clock",
+    "productName": "text-clock",
+    "directories": {
+      "output": "package"
+    },
+    "files": [
+      "app.js",
+      "helper",
+      "dist",
+      "angular.json",
+      "node_modules",
+      "LICENSE.md",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ],
+    "linux": {
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "armv7l"
+          ]
+        }
+      ],
+      "category": "Utility"
+    }
+  },
+  "scripts": {
+    "start": "npm-run-all -p ng:serve electron:dev",
+    "start:fromfile": "npm-run-all ng:build electron",
+    "build": "npm run ng:build",
+    "test": "npm run ng:test",
+    "lint": "eslint ./src/ -c .eslintrc.js --ext .ts --max-warnings=0",
+    "lint:fix": "eslint ./src/ -c .eslintrc.js --ext .ts --fix",
+    "electron": "electron .",
+    "electron:dev": "wait-on http-get://localhost:4200/ && electron . --devtest",
+    "electron:pack": "electron-builder build -l",
+    "pack": "npm run ng:build && npm run electron:pack",
+    "pack:mac": "npm run ng:build && electron-builder build -m",
+    "ng:serve": "ng serve",
+    "ng:build": "ng build --configuration production",
+    "ng:test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~12.2.0",
+    "@angular/common": "~12.2.0",
+    "@angular/compiler": "~12.2.0",
+    "@angular/core": "~12.2.0",
+    "@angular/forms": "~12.2.0",
+    "@angular/localize": "^12.2.7",
+    "@angular/platform-browser": "~12.2.0",
+    "@angular/platform-browser-dynamic": "~12.2.0",
+    "@angular/router": "~12.2.0",
+    "compare-versions": "^3.6.0",
+    "electron-store": "^8.0.1",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~12.2.7",
+    "@angular/cli": "~12.2.7",
+    "@angular/compiler-cli": "~12.2.0",
+    "@types/jasmine": "~3.8.0",
+    "@types/node": "^12.11.1",
+    "electron": "^15.0.0",
+    "electron-builder": "^22.11.7",
+    "jasmine-core": "~3.8.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "~4.3.5",
+    "wait-on": "^6.0.0"
+  }
+}

@@ -1,22 +1,48 @@
-# Java class files
-*.class
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# generated files
-target/
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
 
-# Local configuration file (sdk path, etc)
-local.properties
+# dependencies
+/node_modules
 
-# Windows thumbnail db
+# profiling files
+chrome-profiler-events*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
 Thumbs.db
 
-# OSX files
-.DS_Store
 
-# Eclipse project files
-#.classpath
-#.project
-
-# intelliJ
-.idea/
-*.iml
+package/**
